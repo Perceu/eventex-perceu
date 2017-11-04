@@ -10,3 +10,7 @@ class homeTest(TestCase):
     def test_template_index(self):
         self.resp = self.client.get('/')
         self.assertTemplateUsed(self.resp, 'index.html')
+
+    def test_subscription_link(self):
+        self.resp = self.client.get('/')
+        self.assertContains(self.resp, 'href="/inscricao/"')
